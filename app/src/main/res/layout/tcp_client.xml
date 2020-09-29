@@ -1,0 +1,369 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+    <LinearLayout
+        android:visibility="gone"
+        android:background="@color/colorg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IP:" />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:id="@+id/edit_tcpClientIp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="192.168.1.1" />
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="端口号：" />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:id="@+id/edit_tcpClientPort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="8080" />
+
+    </LinearLayout>
+
+    <jason.tcpdemo.funcs.ReboundScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_margin="15dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_margin="3dp"
+                    android:textColor="@color/colorw"
+                    android:background="@drawable/buttonclickstyle_backup"
+                    android:id="@+id/btn_tcpClientConn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="连接" />
+
+                <Button
+                    android:visibility="gone"
+                    android:layout_margin="3dp"
+                    android:textColor="@color/colorw"
+                    android:background="@drawable/buttonclickstyle_backup"
+                    android:id="@+id/btn_tcpClientClose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="断开" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_margin="10dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="设置警报值"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_send"
+                            android:text=""
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/bt_send"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/colorw"
+                        android:background="@drawable/buttonclickstyle_backup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="点击设置"/>
+
+                    <Button
+                        android:visibility="gone"
+                        android:layout_margin="5dp"
+                        android:id="@+id/bt_send_auto"
+                        android:textColor="@color/colorw"
+                        android:background="@drawable/buttonclickstyle_backup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="自动发送"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#b3e4f0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="接收区"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/c1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_below="@+id/RegisterActivityTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <TextView
+                            android:id="@+id/t1"
+                            android:layout_width="80dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:text="PH"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:gravity="center"
+                            android:id="@+id/et_1"
+                            android:layout_width="220dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/tt1"
+                            android:layout_toEndOf="@+id/t1"
+                            android:orientation="horizontal" />
+
+                        <TextView
+                            android:id="@+id/tt1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="        "/>
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/c2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_below="@+id/RegisterActivityTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <TextView
+                            android:id="@+id/t2"
+                            android:layout_width="80dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:text="TDS"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:gravity="center"
+                            android:id="@+id/et_2"
+                            android:layout_width="220dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/tt2"
+                            android:layout_toEndOf="@+id/t2"
+                            android:orientation="horizontal" />
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:id="@+id/tt2"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="ppm"/>
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/c3"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_below="@+id/RegisterActivityTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <TextView
+                            android:id="@+id/t3"
+                            android:layout_width="80dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:text="  DO  "
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:gravity="center"
+                            android:id="@+id/et_3"
+                            android:layout_width="220dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/tt3"
+                            android:layout_toEndOf="@+id/t3"
+                            android:orientation="horizontal" />
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:id="@+id/tt3"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="mg/L"/>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/c4"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_below="@+id/RegisterActivityTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <TextView
+                            android:id="@+id/t4"
+                            android:layout_width="80dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:text="    T    "
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:gravity="center"
+                            android:id="@+id/et_4"
+                            android:layout_width="220dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/tt4"
+                            android:layout_toEndOf="@+id/t4"
+                            android:orientation="horizontal" />
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:id="@+id/tt4"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="   ℃   "/>
+
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <Button
+                    android:visibility="gone"
+                    android:layout_margin="3dp"
+                    android:textColor="@color/colorw"
+                    android:background="@drawable/buttonclickstyle_backup"
+                    android:id="@+id/btn_tcpCleanClientSend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="清空接收区" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </jason.tcpdemo.funcs.ReboundScrollView>
+
+</LinearLayout>
